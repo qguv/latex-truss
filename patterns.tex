@@ -1,0 +1,77 @@
+\documentclass[letterpaper,11pt]{article}
+\usepackage[margin=1in]{geometry} % letter paper margins
+
+\usepackage{fancyref} % classy figure, section & table references
+\usepackage{xspace}   % correcting intransitive command spacing
+\usepackage{setspace} % smart commands to modify line spacing
+\usepackage{leipzig}  % leipzig glossing rules
+\usepackage{gb4e}     % fancy gloss environment
+\usepackage{tipa}     % international phonetic alphabet
+
+% italicize foreign text, including the first line of a gloss
+% n.b. \it != \em
+\newcommand{\ipa}[1]{\textit{\textipa{#1}}}
+\renewcommand{\eachwordone}[1]{\textit{\textipa{#1}}}
+
+% refs to examples are in parens; use \rex
+\newcommand{\rex}[1]{(\ref{#1})}
+
+% get rid of excessive list spacing
+\let\oldexe\exe
+\renewcommand{\exe}{
+  \singlespacing
+  \oldexe
+  \setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+}
+\let\olditemize\itemize
+\renewcommand{\itemize}{
+  \singlespacing
+  \olditemize
+  \setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+}
+\let\oldenumerate\enumerate
+\renewcommand{\enumerate}{
+  \singlespacing
+  \oldenumerate
+  \setlength{\topsep}{0pt}
+  \setlength{\partopsep}{0pt}
+}
+
+\title{\huge\bf A `Patterns' Homework Assignment}
+\author{Quint Guvernator}
+
+\begin{document}
+\maketitle
+\doublespacing
+
+\section{A Topic}
+
+Odia (formerly Oriya)\footnote{
+  In November 2011, the state government voted to change the anglicized name of the language \emph{Oriya} and state \emph{Orissa} to \emph{Odia} and \emph{Odisha} respectively.
+}
+is an Eastern Indo-Aryan language, a distinction it shares with Bengali and Assamese. Odia is spoken by 32--33 million people in the Indian state Odisha (formerly Orissa).
+
+\subsection{Some Glosses}
+
+In \rex{wasting-paper} below, the child's actions are deemed bad, and the speaker expresses her disapproval by using the negative-connotation article \ipa{-\:ta}.
+The article is not restricted to people, however; other inanimate referants can also take \ipa{-\:ta} as demonstrated in \rex{bad-road}.
+
+\begin{exe}
+  \ex \label{wasting-paper}
+  \gll \textbf{pila-\:ta} bOhut kagOdZO nOstO kOr-utSv\super{h}-i.
+  \\ child-\Art{} much paper waste do-\Prog-\Third\Sg
+  \\ \trans `The child is wasting much paper.'
+
+  \ex \label{bad-road}
+  \gll \textbf{rasta-\:ta} bhOlO nuh-\~e. au \:tikie aste ga\:ri cO\:l-a-O.
+  \\ road-\Art{} good be:\Neg-\Third\Sg{} more a.little slowly car run-\Caus-\Second\Pl:\Imp
+  \\ \trans `The road is not good. Please drive a little more slowly.'
+\end{exe}
+
+%FIXME: replace `hw00' below with the appropriate filename
+\bibliography{hw00}{}
+\bibliographystyle{plain}
+
+\end{document}
